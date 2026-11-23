@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database
+  namespace: production
+  labels:
+    tier: database
+    app: myapp
+spec:
+  containers:
+  - name: redis
+    image: redis:7-alpine
+    ports:
+    - containerPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+  namespace: production
+spec:
+  selector:
+    tier: database
+    app: myapp
+  ports:
+  - port: 3306
+    targetPort: 6379
+    protocol: TCP
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+  namespace: production
+  labels:
+    tier: backend
+    app: myapp
+spec:
+  containers:
+  - name: backend
+    image: nginx:1.27.3-alpine
+    ports:
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: production
+spec:
+  selector:
+    tier: backend
+    app: myapp
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  namespace: production
+  labels:
+    tier: frontend
+    app: myapp
+spec:
+  containers:
+  - name: frontend
+    image: alpine/curl:8.14.1
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo 'Frontend running'; sleep 3600; done"]

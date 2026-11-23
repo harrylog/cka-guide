@@ -1,0 +1,45 @@
+= Certified Kubernetes Administrator (CKA) Study Guide, 2nd Edition
+
+++++
+<br>
+<img align="left" role="left" src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9798341608399/files/assets/cover.png" width="110" alt="Book Cover" />
+++++
+Source code for book https://learning.oreilly.com/library/view/certified-kubernetes-administrator/9798341608399/["Certified Kubernetes Administrator (CKA) Study Guide, 2nd Edition"], In-Depth Guidance and Practice, published by Benjamin Muschko for O'Reilly Media Inc.
+
+This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.33. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
+
+> **_NOTE:_** The source code for the 1st edition of the book is available https://github.com/bmuschko/cka-study-guide/tree/1st-edition[here].
+
+== Source Code by Chapters
+
+. Introduction
+* Exam Details and Resources
+* Kubernetes in a Nutshell
+* link:./ch03[Interacting with Kubernetes]
+. Cluster Architecture, Installation and Configuration
+* link:./ch04[Cluster Installation and Upgrade]
+* link:./ch05[Backing Up and Restoring etcd]
+* link:./ch06[Authentication, Authorization, and Admission Control]
+* link:./ch07[Operators and Custom Resource Definitions (CRDs)]
+* link:./ch08[Helm and Kustomize]
+. Workloads and Scheduling
+* link:./ch09[Pods and Namespaces]
+* link:./ch10[ConfigMaps and Secrets]
+* link:./ch11[Deployments and ReplicaSets]
+* link:./ch12[Scaling Workloads]
+* link:./ch13[Resource Requirements, Limits, and Quotas]
+* link:./ch14[Pod Scheduling]
+. Storage
+* link:./ch15[Volumes]
+* link:./ch16[Persistent Volumes]
+. Servicing and Networking
+* link:./ch17[Services]
+* link:./ch18[Ingresses]
+* link:./ch19[Gateway API]
+* link:./ch20[Network Policies]
+. Troubleshooting
+* link:./ch21[Troubleshooting Applications]
+* link:./ch22[Troubleshooting Clusters]
+. Appendixes
+* link:./app-a[Appendix A: Answers to Review Questions]
+* link:./app-b[Appendix B: Exam Review Guide]
