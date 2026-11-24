@@ -3,3 +3,5 @@
 kubeadm-init.out
 admin.conf
 *-console.log
+# practice working copies
+exam-practice/**/q*.yaml
