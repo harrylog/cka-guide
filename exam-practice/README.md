@@ -39,3 +39,4 @@ export now="--force --grace-period 0"
 | #  | Topic                              | Domain                          | Weight |
 |----|------------------------------------|---------------------------------|--------|
 | 01 | Sidecar container / shared volume  | Workloads & Scheduling          | ~4%    |
+| 02 | NetworkPolicy (per-port, per-source) | Services & Networking         | ~7%    |
