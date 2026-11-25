@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: api-allow
+  namespace: venus
+spec:
+  podSelector:
+    matchLabels:
+      app: api
+
+  policyTypes:
+    - Ingress
+
+  ingress:
+    # Rule 1: frontend Pods in venus -> API port 8080
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: venus
+          podSelector:
+            matchLabels:
+              app: frontend
+      ports:
+        - protocol: TCP
+          port: 8080
+
+    # Rule 2: All Pods in monitoring -> metrics port 9090
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: monitoring
+      ports:
+        - protocol: TCP
+          port: 9090
